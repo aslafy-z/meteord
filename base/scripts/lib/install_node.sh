@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 NODE_VERSION=4.4.7
+NPM_VERSION=3
 NODE_ARCH=x64
 
 # check we need to do this or not
@@ -15,3 +16,5 @@ mv ${NODE_DIST} /opt/nodejs
 
 ln -sf /opt/nodejs/bin/node /usr/bin/node
 ln -sf /opt/nodejs/bin/npm /usr/bin/npm
+
+npm install --global npm@${NPM_VERSION}
