@@ -8,10 +8,11 @@ BUNDLE_DIR=/tmp/bundle-dir
 cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 
+npm install --unsafe-perm
 meteor build --directory $BUNDLE_DIR --server=http://localhost:3000
 
 cd $BUNDLE_DIR/bundle/programs/server/
-npm i
+npm install --unsafe-perm
 
 mv $BUNDLE_DIR/bundle /built_app
 
