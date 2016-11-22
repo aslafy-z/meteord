@@ -9,6 +9,10 @@ cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 
 npm install --unsafe-perm
+
+# fixes the superuser warning
+export METEOR_ALLOW_SUPERUSER=true
+
 meteor build --directory $BUNDLE_DIR --server=http://localhost:3000
 
 cd $BUNDLE_DIR/bundle/programs/server/
